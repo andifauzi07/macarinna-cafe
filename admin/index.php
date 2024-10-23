@@ -1,0 +1,1 @@
+<script>window.location='transaksi_penjualan/index.php'</script>
