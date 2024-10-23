@@ -38,7 +38,7 @@ else if ($_SESSION['hak_akses']!="manajer")
 
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -48,7 +48,7 @@ else if ($_SESSION['hak_akses']!="manajer")
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?=base_url('manajer/analisis_asosiasi/index.php')?>" style="color: #ffff;"><strong><em>Maccarinna Kaffe</em></strong></a>
+          <a class="navbar-brand" href="<?=base_url('manajer/analisis_asosiasi/index.php')?>" ><strong><em>Maccarinna Kaffe</em></strong></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -79,7 +79,7 @@ else if ($_SESSION['hak_akses']!="manajer")
 
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffff;"><i class="fa fa-user"></i> &nbsp;<?=$_SESSION['username'];?> as <?=$_SESSION['hak_akses'];?> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> &nbsp;<?=$_SESSION['username'];?> as <?=$_SESSION['hak_akses'];?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#" id="<?=$_SESSION['username']; ?>" data-target="#ModalPass" data-toggle="modal"><i class="fa fa-fw fa-key"></i> Ubah Password</a>

@@ -159,7 +159,6 @@ if (isset($_POST['login'])) {
             height: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
-            color: #fff;
         }
 
         .bg-img {
@@ -230,6 +229,10 @@ if (isset($_POST['login'])) {
 
         .checkbox input {
             margin-right: 10px;
+        }
+
+        label {
+            color: #fff;
         }
     </style>
 </head>
