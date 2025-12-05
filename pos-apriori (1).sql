@@ -1,0 +1,1142 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 23 Okt 2024 pada 21.58
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.0.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `pos-apriori`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `detailpenjualan`
+--
+
+CREATE TABLE `detailpenjualan` (
+  `nonota` char(11) DEFAULT NULL,
+  `kd_menu` char(11) DEFAULT NULL,
+  `harga` int(10) DEFAULT NULL,
+  `jumlah` int(5) DEFAULT NULL,
+  `subtotal` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `detailpenjualan`
+--
+
+INSERT INTO `detailpenjualan` (`nonota`, `kd_menu`, `harga`, `jumlah`, `subtotal`) VALUES
+('NOTA0000001', 'KDMN0000002', 10000, 2, 20000),
+('NOTA0000002', 'KDMN0000043', 15000, 3, 45000),
+('NOTA0000002', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000003', 'KDMN0000011', 18000, 1, 18000),
+('NOTA0000003', 'KDMN0000012', 20000, 1, 20000),
+('NOTA0000004', 'KDMN0000005', 15000, 1, 15000),
+('NOTA0000004', 'KDMN0000044', 15000, 2, 30000),
+('NOTA0000005', 'KDMN0000001', 8000, 1, 8000),
+('NOTA0000005', 'KDMN0000004', 10000, 2, 20000),
+('NOTA0000006', 'KDMN0000048', 125000, 1, 125000),
+('NOTA0000006', 'KDMN0000050', 18000, 1, 18000),
+('NOTA0000007', 'KDMN0000005', 15000, 2, 30000),
+('NOTA0000007', 'KDMN0000008', 15000, 1, 15000),
+('NOTA0000008', 'KDMN0000013', 18000, 1, 18000),
+('NOTA0000008', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000009', 'KDMN0000016', 40000, 2, 80000),
+('NOTA0000010', 'KDMN0000010', 18000, 1, 18000),
+('NOTA0000010', 'KDMN0000013', 18000, 1, 18000),
+('NOTA0000010', 'KDMN0000007', 15000, 1, 15000),
+('NOTA0000011', 'KDMN0000005', 15000, 1, 15000),
+('NOTA0000011', 'KDMN0000006', 15000, 2, 30000),
+('NOTA0000012', 'KDMN0000015', 18000, 1, 18000),
+('NOTA0000012', 'KDMN0000013', 18000, 2, 36000),
+('NOTA0000013', 'KDMN0000007', 15000, 1, 15000),
+('NOTA0000013', 'KDMN0000007', 15000, 1, 15000),
+('NOTA0000014', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000014', 'KDMN0000055', 15000, 1, 15000),
+('NOTA0000015', 'KDMN0000008', 15000, 1, 15000),
+('NOTA0000015', 'KDMN0000015', 18000, 2, 36000),
+('NOTA0000016', 'KDMN0000007', 15000, 1, 15000),
+('NOTA0000016', 'KDMN0000008', 15000, 1, 15000),
+('NOTA0000017', 'KDMN0000012', 20000, 1, 20000),
+('NOTA0000017', 'KDMN0000048', 125000, 2, 250000),
+('NOTA0000018', 'KDMN0000007', 15000, 2, 30000),
+('NOTA0000019', 'KDMN0000007', 15000, 2, 30000),
+('NOTA0000019', 'KDMN0000025', 18000, 3, 54000),
+('NOTA0000020', 'KDMN0000018', 15000, 2, 30000),
+('NOTA0000020', 'KDMN0000032', 23000, 1, 23000),
+('NOTA0000021', 'KDMN0000001', 8000, 2, 16000),
+('NOTA0000021', 'KDMN0000002', 10000, 1, 10000),
+('NOTA0000022', 'KDMN0000002', 10000, 1, 10000),
+('NOTA0000022', 'KDMN0000007', 15000, 2, 30000),
+('NOTA0000023', 'KDMN0000007', 15000, 2, 30000),
+('NOTA0000023', 'KDMN0000008', 15000, 1, 15000),
+('NOTA0000024', 'KDMN0000006', 15000, 2, 30000),
+('NOTA0000025', 'KDMN0000010', 18000, 2, 36000),
+('NOTA0000025', 'KDMN0000011', 18000, 1, 18000),
+('NOTA0000026', 'KDMN0000006', 15000, 2, 30000),
+('NOTA0000027', 'KDMN0000003', 10000, 2, 20000),
+('NOTA0000028', 'KDMN0000001', 8000, 1, 8000),
+('NOTA0000028', 'KDMN0000002', 10000, 1, 10000),
+('NOTA0000029', 'KDMN0000002', 10000, 1, 10000),
+('NOTA0000029', 'KDMN0000001', 8000, 1, 8000),
+('NOTA0000030', 'KDMN0000002', 10000, 2, 20000),
+('NOTA0000030', 'KDMN0000001', 8000, 2, 16000),
+('NOTA0000031', 'KDMN0000009', 18000, 2, 36000),
+('NOTA0000031', 'KDMN0000008', 15000, 2, 30000),
+('NOTA0000032', 'KDMN0000047', 25000, 2, 50000),
+('NOTA0000032', 'KDMN0000039', 18000, 2, 36000),
+('NOTA0000033', 'KDMN0000014', 18000, 2, 36000),
+('NOTA0000033', 'KDMN0000010', 18000, 1, 18000),
+('NOTA0000034', 'KDMN0000015', 18000, 1, 18000),
+('NOTA0000034', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000035', 'KDMN0000038', 18000, 2, 36000),
+('NOTA0000035', 'KDMN0000052', 15000, 1, 15000),
+('NOTA0000036', 'KDMN0000005', 15000, 1, 15000),
+('NOTA0000036', 'KDMN0000012', 20000, 2, 40000),
+('NOTA0000037', 'KDMN0000002', 10000, 5, 50000),
+('NOTA0000037', 'KDMN0000001', 8000, 2, 16000),
+('NOTA0000038', 'KDMN0000003', 10000, 2, 20000),
+('NOTA0000038', 'KDMN0000004', 10000, 1, 10000),
+('NOTA0000038', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000039', 'KDMN0000003', 10000, 2, 20000),
+('NOTA0000039', 'KDMN0000004', 10000, 2, 20000),
+('NOTA0000040', 'KDMN0000002', 10000, 1, 10000),
+('NOTA0000040', 'KDMN0000004', 10000, 1, 10000),
+('NOTA0000040', 'KDMN0000005', 15000, 1, 15000),
+('NOTA0000041', 'KDMN0000003', 10000, 2, 20000),
+('NOTA0000041', 'KDMN0000004', 10000, 1, 10000),
+('NOTA0000042', 'KDMN0000003', 10000, 1, 10000),
+('NOTA0000042', 'KDMN0000004', 10000, 1, 10000),
+('NOTA0000043', 'KDMN0000003', 10000, 10, 100000),
+('NOTA0000043', 'KDMN0000004', 10000, 15, 150000),
+('NOTA0000044', 'KDMN0000004', 10000, 2, 20000),
+('NOTA0000044', 'KDMN0000003', 10000, 3, 30000),
+('NOTA0000045', 'KDMN0000003', 10000, 1, 10000),
+('NOTA0000045', 'KDMN0000004', 10000, 2, 20000),
+('NOTA0000045', 'KDMN0000012', 20000, 3, 60000),
+('NOTA0000046', 'KDMN0000016', 40000, 1, 40000),
+('NOTA0000046', 'KDMN0000011', 18000, 2, 36000),
+('NOTA0000047', 'KDMN0000030', 20000, 2, 40000),
+('NOTA0000047', 'KDMN0000042', 15000, 1, 15000),
+('NOTA0000048', 'KDMN0000043', 15000, 2, 30000),
+('NOTA0000048', 'KDMN0000054', 15000, 1, 15000),
+('NOTA0000048', 'KDMN0000041', 30000, 1, 30000),
+('NOTA0000048', 'KDMN0000054', 15000, 2, 30000),
+('NOTA0000048', 'KDMN0000005', 15000, 8, 120000),
+('NOTA0000049', 'KDMN0000007', 15000, 2, 30000),
+('NOTA0000049', 'KDMN0000008', 15000, 3, 45000),
+('NOTA0000049', 'KDMN0000010', 18000, 1, 18000),
+('NOTA0000050', 'KDMN0000007', 15000, 3, 45000),
+('NOTA0000050', 'KDMN0000008', 15000, 1, 15000),
+('NOTA0000050', 'KDMN0000010', 18000, 3, 54000),
+('NOTA0000050', 'KDMN0000015', 18000, 1, 18000),
+('NOTA0000051', 'KDMN0000010', 18000, 1, 18000),
+('NOTA0000051', 'KDMN0000008', 15000, 1, 15000),
+('NOTA0000051', 'KDMN0000007', 15000, 1, 15000),
+('NOTA0000052', 'KDMN0000001', 8000, 1, 8000),
+('NOTA0000052', 'KDMN0000003', 10000, 1, 10000),
+('NOTA0000053', 'KDMN0000012', 20000, 2, 40000),
+('NOTA0000053', 'KDMN0000013', 18000, 1, 18000),
+('NOTA0000053', 'KDMN0000051', 20000, 1, 20000),
+('NOTA0000054', 'KDMN0000045', 15000, 1, 15000),
+('NOTA0000054', 'KDMN0000040', 5000, 1, 5000),
+('NOTA0000054', 'KDMN0000009', 18000, 2, 36000),
+('NOTA0000055', 'KDMN0000041', 30000, 1, 30000),
+('NOTA0000055', 'KDMN0000040', 5000, 1, 5000),
+('NOTA0000055', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000056', 'KDMN0000010', 18000, 2, 36000),
+('NOTA0000056', 'KDMN0000041', 30000, 2, 60000),
+('NOTA0000056', 'KDMN0000040', 5000, 2, 10000),
+('NOTA0000057', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000057', 'KDMN0000041', 30000, 2, 60000),
+('NOTA0000057', 'KDMN0000040', 5000, 2, 10000),
+('NOTA0000058', 'KDMN0000014', 18000, 2, 36000),
+('NOTA0000058', 'KDMN0000040', 5000, 1, 5000),
+('NOTA0000059', 'KDMN0000041', 30000, 1, 30000),
+('NOTA0000059', 'KDMN0000040', 5000, 2, 10000),
+('NOTA0000059', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000060', 'KDMN0000041', 30000, 2, 60000),
+('NOTA0000060', 'KDMN0000040', 5000, 1, 5000),
+('NOTA0000060', 'KDMN0000022', 15000, 1, 15000),
+('NOTA0000061', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000061', 'KDMN0000021', 15000, 1, 15000),
+('NOTA0000061', 'KDMN0000041', 30000, 2, 60000),
+('NOTA0000062', 'KDMN0000052', 15000, 1, 15000),
+('NOTA0000062', 'KDMN0000041', 30000, 1, 30000),
+('NOTA0000062', 'KDMN0000040', 5000, 1, 5000),
+('NOTA0000062', 'KDMN0000014', 18000, 2, 36000),
+('NOTA0000063', 'KDMN0000010', 18000, 1, 18000),
+('NOTA0000063', 'KDMN0000041', 30000, 2, 60000),
+('NOTA0000063', 'KDMN0000040', 5000, 2, 10000),
+('NOTA0000063', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000064', 'KDMN0000010', 18000, 1, 18000),
+('NOTA0000064', 'KDMN0000041', 30000, 1, 30000),
+('NOTA0000064', 'KDMN0000040', 5000, 2, 10000),
+('NOTA0000065', 'KDMN0000009', 18000, 2, 36000),
+('NOTA0000065', 'KDMN0000051', 20000, 1, 20000),
+('NOTA0000066', 'KDMN0000051', 20000, 2, 40000),
+('NOTA0000066', 'KDMN0000010', 18000, 2, 36000),
+('NOTA0000067', 'KDMN0000051', 20000, 2, 40000),
+('NOTA0000067', 'KDMN0000009', 18000, 3, 54000),
+('NOTA0000068', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000068', 'KDMN0000040', 5000, 1, 5000),
+('NOTA0000069', 'KDMN0000041', 30000, 1, 30000),
+('NOTA0000069', 'KDMN0000051', 20000, 1, 20000),
+('NOTA0000069', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000069', 'KDMN0000009', 18000, 1, 18000),
+('NOTA0000070', 'KDMN0000014', 18000, 1, 18000),
+('NOTA0000070', 'KDMN0000040', 5000, 1, 5000),
+('NOTA0000070', 'KDMN0000051', 20000, 1, 20000),
+('NOTA0000071', 'KDMN0000016', 40000, 1, 40000),
+('NOTA0000071', 'KDMN0000044', 15000, 2, 30000),
+('NOTA0000071', 'KDMN0000045', 15000, 2, 30000),
+('NOTA0000072', 'KDMN0000017', 20000, 1, 20000),
+('NOTA0000072', 'KDMN0000020', 15000, 1, 15000),
+('NOTA0000072', 'KDMN0000046', 25000, 2, 50000),
+('NOTA0000073', 'KDMN0000044', 15000, 1, 15000),
+('NOTA0000073', 'KDMN0000038', 18000, 2, 36000),
+('NOTA0000073', 'KDMN0000050', 18000, 1, 18000),
+('NOTA0000074', 'KDMN0000044', 15000, 1, 15000),
+('NOTA0000074', 'KDMN0000045', 15000, 1, 15000),
+('NOTA0000074', 'KDMN0000040', 5000, 1, 5000),
+('NOTA0000074', 'KDMN0000015', 18000, 2, 36000),
+('NOTA0000075', 'KDMN0000053', 5000, 2, 10000),
+('NOTA0000075', 'KDMN0000040', 5000, 2, 10000),
+('NOTA0000075', 'KDMN0000051', 20000, 1, 20000),
+('NOTA0000076', 'KDMN0000049', 200000, 1, 200000),
+('NOTA0000076', 'KDMN0000042', 15000, 1, 15000),
+('NOTA0000077', 'KDMN0000011', 18000, 1, 18000),
+('NOTA0000077', 'KDMN0000011', 18000, 2, 36000),
+('NOTA0000077', 'KDMN0000016', 40000, 1, 40000),
+('NOTA0000078', 'KDMN0000023', 15000, 1, 15000),
+('NOTA0000078', 'KDMN0000024', 15000, 1, 15000),
+('NOTA0000078', 'KDMN0000025', 18000, 2, 36000),
+('NOTA0000078', 'KDMN0000051', 20000, 1, 20000),
+('NOTA0000079', 'KDMN0000043', 15000, 1, 15000),
+('NOTA0000079', 'KDMN0000010', 18000, 1, 18000),
+('NOTA0000079', 'KDMN0000027', 18000, 2, 36000),
+('NOTA0000080', 'KDMN0000017', 20000, 1, 20000),
+('NOTA0000080', 'KDMN0000016', 40000, 1, 40000),
+('NOTA0000080', 'KDMN0000043', 15000, 1, 15000),
+('NOTA0000081', 'KDMN0000018', 15000, 2, 30000),
+('NOTA0000081', 'KDMN0000019', 15000, 1, 15000),
+('NOTA0000082', 'KDMN0000026', 18000, 2, 36000),
+('NOTA0000082', 'KDMN0000025', 18000, 1, 18000),
+('NOTA0000083', 'KDMN0000029', 20000, 2, 40000),
+('NOTA0000083', 'KDMN0000030', 20000, 1, 20000),
+('NOTA0000084', 'KDMN0000031', 18000, 1, 18000),
+('NOTA0000084', 'KDMN0000034', 20000, 1, 20000),
+('NOTA0000085', 'KDMN0000016', 40000, 2, 80000),
+('NOTA0000086', 'KDMN0000033', 18000, 3, 54000),
+('NOTA0000087', 'KDMN0000035', 13000, 4, 52000),
+('NOTA0000088', 'KDMN0000035', 13000, 2, 26000),
+('NOTA0000089', 'KDMN0000036', 23000, 1, 23000),
+('NOTA0000089', 'KDMN0000028', 18000, 2, 36000),
+('NOTA0000089', 'KDMN0000055', 15000, 1, 15000),
+('NOTA0000090', 'KDMN0000005', 15000, 2, 30000),
+('NOTA0000090', 'KDMN0000017', 20000, 1, 20000),
+('NOTA0000090', 'KDMN0000036', 23000, 1, 23000),
+('NOTA0000091', 'KDMN0000001', 8000, 1, 8000),
+('NOTA0000091', 'KDMN0000002', 10000, 1, 10000),
+('NOTA0000091', 'KDMN0000016', 40000, 1, 40000),
+('NOTA0000091', 'KDMN0000054', 15000, 1, 15000),
+('NOTA0000092', 'KDMN0000051', 20000, 1, 20000),
+('NOTA0000092', 'KDMN0000030', 20000, 1, 20000),
+('NOTA0000092', 'KDMN0000013', 18000, 1, 18000),
+('NOTA0000093', 'KDMN0000049', 200000, 1, 200000),
+('NOTA0000093', 'KDMN0000032', 23000, 1, 23000),
+('NOTA0000094', 'KDMN0000028', 18000, 1, 18000),
+('NOTA0000094', 'KDMN0000024', 15000, 2, 30000),
+('NOTA0000094', 'KDMN0000050', 18000, 1, 18000),
+('NOTA0000095', 'KDMN0000055', 15000, 1, 15000),
+('NOTA0000095', 'KDMN0000012', 20000, 1, 20000),
+('NOTA0000095', 'KDMN0000003', 10000, 1, 10000),
+('NOTA0000096', 'KDMN0000030', 20000, 1, 20000),
+('NOTA0000096', 'KDMN0000037', 23000, 1, 23000),
+('NOTA0000097', 'KDMN0000055', 15000, 1, 15000),
+('NOTA0000097', 'KDMN0000054', 15000, 1, 15000),
+('NOTA0000097', 'KDMN0000053', 5000, 1, 5000),
+('NOTA0000097', 'KDMN0000034', 20000, 1, 20000),
+('NOTA0000097', 'KDMN0000030', 20000, 2, 40000),
+('NOTA0000098', 'KDMN0000048', 125000, 1, 125000),
+('NOTA0000098', 'KDMN0000031', 18000, 1, 18000),
+('NOTA0000098', 'KDMN0000015', 18000, 1, 18000),
+('NOTA0000099', 'KDMN0000001', 8000, 1, 8000),
+('NOTA0000099', 'KDMN0000003', 10000, 1, 10000),
+('NOTA0000099', 'KDMN0000036', 23000, 1, 23000),
+('NOTA0000100', 'KDMN0000013', 18000, 1, 18000),
+('NOTA0000100', 'KDMN0000043', 15000, 1, 15000),
+('NOTA0000100', 'KDMN0000017', 20000, 1, 20000),
+('NOTA0000101', 'KDMN0000012', 20000, 2, 40000),
+('NOTA0000102', 'KDMN0000012', 20000, 1, 20000),
+('NOTA0000103', 'KDMN0000017', 20000, 1, 20000),
+('NOTA0000103', 'KDMN0000006', 15000, 2, 30000),
+('NOTA0000103', 'KDMN0000014', 18000, 2, 36000),
+('NOTA0000103', 'KDMN0000014', 18000, 10, 180000),
+('NOTA0000104', 'KDMN0000013', 18000, 2, 36000),
+('NOTA0000104', 'KDMN0000005', 15000, 2, 30000),
+('NOTA0000105', 'KDMN0000013', 18000, 2, 36000),
+('NOTA0000106', 'KDMN0000007', 15000, 2, 30000),
+('NOTA0000106', 'KDMN0000012', 20000, 2, 40000);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `penjualan`
+--
+
+CREATE TABLE `penjualan` (
+  `nonota` char(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `total` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `penjualan`
+--
+
+INSERT INTO `penjualan` (`nonota`, `tanggal`, `total`) VALUES
+('NOTA0000001', '2024-09-29', 20000),
+('NOTA0000002', '2024-09-29', 63000),
+('NOTA0000003', '2024-09-29', 38000),
+('NOTA0000004', '2024-09-29', 45000),
+('NOTA0000005', '2024-09-29', 28000),
+('NOTA0000006', '2024-09-29', 143000),
+('NOTA0000007', '2024-09-29', 45000),
+('NOTA0000008', '2024-09-29', 36000),
+('NOTA0000009', '2024-09-29', 80000),
+('NOTA0000010', '2024-09-29', 51000),
+('NOTA0000011', '2024-09-29', 45000),
+('NOTA0000012', '2024-09-29', 54000),
+('NOTA0000013', '2024-09-29', 30000),
+('NOTA0000014', '2024-09-29', 33000),
+('NOTA0000015', '2024-09-30', 51000),
+('NOTA0000016', '2024-09-30', 30000),
+('NOTA0000017', '2024-09-30', 270000),
+('NOTA0000018', '2024-09-30', 30000),
+('NOTA0000019', '2024-09-30', 84000),
+('NOTA0000020', '2024-09-30', 53000),
+('NOTA0000021', '2024-09-30', 26000),
+('NOTA0000022', '2024-09-30', 40000),
+('NOTA0000023', '2024-09-30', 45000),
+('NOTA0000024', '2024-09-30', 30000),
+('NOTA0000025', '2024-09-30', 54000),
+('NOTA0000026', '2024-09-30', 30000),
+('NOTA0000027', '2024-09-30', 20000),
+('NOTA0000028', '2024-09-30', 18000),
+('NOTA0000029', '2024-09-30', 18000),
+('NOTA0000030', '2024-09-30', 36000),
+('NOTA0000031', '2024-09-30', 66000),
+('NOTA0000032', '2024-09-30', 86000),
+('NOTA0000033', '2024-09-30', 54000),
+('NOTA0000034', '2024-09-30', 36000),
+('NOTA0000035', '2024-09-30', 51000),
+('NOTA0000036', '2024-09-30', 55000),
+('NOTA0000037', '2024-09-30', 66000),
+('NOTA0000038', '2024-09-30', 48000),
+('NOTA0000039', '2024-09-30', 40000),
+('NOTA0000040', '2024-09-30', 35000),
+('NOTA0000041', '2024-09-30', 30000),
+('NOTA0000042', '2024-09-30', 20000),
+('NOTA0000043', '2024-09-30', 250000),
+('NOTA0000044', '2024-09-30', 50000),
+('NOTA0000045', '2024-09-30', 90000),
+('NOTA0000046', '2024-09-30', 76000),
+('NOTA0000047', '2024-09-30', 55000),
+('NOTA0000048', '2024-09-30', 225000),
+('NOTA0000049', '2024-09-30', 93000),
+('NOTA0000050', '2024-09-30', 132000),
+('NOTA0000051', '2024-09-30', 48000),
+('NOTA0000052', '2024-10-01', 18000),
+('NOTA0000053', '2024-10-01', 78000),
+('NOTA0000054', '2024-10-01', 56000),
+('NOTA0000055', '2024-10-08', 53000),
+('NOTA0000056', '2024-10-08', 106000),
+('NOTA0000057', '2024-10-08', 88000),
+('NOTA0000058', '2024-10-08', 41000),
+('NOTA0000059', '2024-10-08', 58000),
+('NOTA0000060', '2024-10-08', 80000),
+('NOTA0000061', '2024-10-08', 93000),
+('NOTA0000062', '2024-10-08', 86000),
+('NOTA0000063', '2024-10-08', 106000),
+('NOTA0000064', '2024-10-08', 58000),
+('NOTA0000065', '2024-10-08', 56000),
+('NOTA0000066', '2024-10-08', 76000),
+('NOTA0000067', '2024-10-08', 94000),
+('NOTA0000068', '2024-10-08', 23000),
+('NOTA0000069', '2024-10-08', 86000),
+('NOTA0000070', '2024-10-08', 43000),
+('NOTA0000071', '2024-10-08', 100000),
+('NOTA0000072', '2024-10-08', 85000),
+('NOTA0000073', '2024-10-08', 69000),
+('NOTA0000074', '2024-10-08', 71000),
+('NOTA0000075', '2024-10-08', 40000),
+('NOTA0000076', '2024-10-08', 215000),
+('NOTA0000077', '2024-10-08', 94000),
+('NOTA0000078', '2024-10-08', 86000),
+('NOTA0000079', '2024-10-08', 69000),
+('NOTA0000080', '2024-10-08', 75000),
+('NOTA0000081', '2024-10-08', 45000),
+('NOTA0000082', '2024-10-08', 54000),
+('NOTA0000083', '2024-10-08', 60000),
+('NOTA0000084', '2024-10-08', 38000),
+('NOTA0000085', '2024-10-08', 80000),
+('NOTA0000086', '2024-10-08', 54000),
+('NOTA0000087', '2024-10-08', 52000),
+('NOTA0000088', '2024-10-08', 26000),
+('NOTA0000089', '2024-10-08', 74000),
+('NOTA0000090', '2024-10-08', 73000),
+('NOTA0000091', '2024-10-08', 73000),
+('NOTA0000092', '2024-10-08', 58000),
+('NOTA0000093', '2024-10-08', 223000),
+('NOTA0000094', '2024-10-08', 66000),
+('NOTA0000095', '2024-10-08', 45000),
+('NOTA0000096', '2024-10-08', 43000),
+('NOTA0000097', '2024-10-08', 95000),
+('NOTA0000098', '2024-10-08', 161000),
+('NOTA0000099', '2024-10-08', 41000),
+('NOTA0000100', '2024-10-08', 53000),
+('NOTA0000101', '2024-10-10', 40000),
+('NOTA0000102', '2024-10-23', 20000),
+('NOTA0000103', '2024-10-23', 266000),
+('NOTA0000104', '2024-10-23', 66000),
+('NOTA0000105', '2024-10-23', 36000),
+('NOTA0000106', '2024-10-23', 70000);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tblsementara`
+--
+
+CREATE TABLE `tblsementara` (
+  `kd_menu` char(11) DEFAULT NULL,
+  `harga` int(10) DEFAULT NULL,
+  `jumlah` int(5) DEFAULT NULL,
+  `subtotal` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_akun`
+--
+
+CREATE TABLE `tb_akun` (
+  `kd_akun` char(11) NOT NULL,
+  `username` varchar(25) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `kd_pegawai` char(11) DEFAULT NULL,
+  `hak_akses` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_akun`
+--
+
+INSERT INTO `tb_akun` (`kd_akun`, `username`, `password`, `kd_pegawai`, `hak_akses`) VALUES
+('KD000000001', 'manajer', '69b731ea8f289cf16a192ce78a37b4f0', 'PGPS0000001', 'manajer'),
+('KD000000002', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'PGPS0000002', 'admin'),
+('KD000000003', 'selviiias', '3ec9410bdc5aa3af21bae2fc55460192', 'PGPS0000003', 'manajer'),
+('KD000000004', 'andifauzi', 'b0baee9d279d34fa1dfd71aadb908c3f', 'PGPS0000004', 'manajer');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_assosiasi`
+--
+
+CREATE TABLE `tb_assosiasi` (
+  `id` int(11) NOT NULL,
+  `itemset` varchar(250) NOT NULL,
+  `item` varchar(250) NOT NULL,
+  `level` varchar(12) NOT NULL,
+  `support1` float NOT NULL,
+  `support2` float NOT NULL,
+  `confidence` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_assosiasi`
+--
+
+INSERT INTO `tb_assosiasi` (`id`, `itemset`, `item`, `level`, `support1`, `support2`, `confidence`) VALUES
+(1, 'KDMN0000040 THEN KDMN0000041', 'Air Mineral THEN Mr Burger', 'L2', 7.55, 13.21, 57.15),
+(2, 'KDMN0000041 THEN KDMN0000040', 'Mr Burger THEN Air Mineral', 'L2', 7.55, 10.38, 72.74),
+(3, 'KDMN0000040 THEN KDMN0000014', 'Air Mineral THEN Red Velvet', 'L2', 7.55, 13.21, 57.15),
+(4, 'KDMN0000014 THEN KDMN0000040', 'Red Velvet THEN Air Mineral', 'L2', 7.55, 16.04, 47.07),
+(5, 'KDMN0000041 THEN KDMN0000014', 'Mr Burger THEN Red Velvet', 'L2', 6.6, 10.38, 63.58),
+(6, 'KDMN0000014 THEN KDMN0000041', 'Red Velvet THEN Mr Burger', 'L2', 6.6, 16.04, 41.15),
+(7, 'KDMN0000004 THEN KDMN0000003', 'Americano THEN Bon Bon', 'L2', 6.6, 8.49, 77.74),
+(8, 'KDMN0000003 THEN KDMN0000004', 'Bon Bon THEN Americano', 'L2', 6.6, 10.38, 63.58),
+(9, 'KDMN0000002 THEN KDMN0000001', 'Affugatto THEN Espresso', 'L2', 5.66, 8.49, 66.67),
+(10, 'KDMN0000001 THEN KDMN0000002', 'Espresso THEN Affugatto', 'L2', 5.66, 8.49, 66.67),
+(11, 'KDMN0000007 THEN KDMN0000008', 'Kopi Rinna Hot THEN Kopi Rinna Ice', 'L2', 4.72, 10.38, 45.47),
+(12, 'KDMN0000008 THEN KDMN0000007', 'Kopi Rinna Ice THEN Kopi Rinna Hot', 'L2', 4.72, 7.55, 62.52),
+(13, 'KDMN0000007 THEN KDMN0000010', 'Kopi Rinna Hot THEN Vanilla Latte Ice', 'L2', 3.77, 10.38, 36.32),
+(14, 'KDMN0000010 THEN KDMN0000007', 'Vanilla Latte Ice THEN Kopi Rinna Hot', 'L2', 3.77, 10.38, 36.32),
+(15, 'KDMN0000040 THEN KDMN0000010', 'Air Mineral THEN Vanilla Latte Ice', 'L2', 2.83, 13.21, 21.42),
+(16, 'KDMN0000010 THEN KDMN0000040', 'Vanilla Latte Ice THEN Air Mineral', 'L2', 2.83, 10.38, 27.26),
+(17, 'KDMN0000008 THEN KDMN0000010', 'Kopi Rinna Ice THEN Vanilla Latte Ice', 'L2', 2.83, 7.55, 37.48),
+(18, 'KDMN0000010 THEN KDMN0000008', 'Vanilla Latte Ice THEN Kopi Rinna Ice', 'L2', 2.83, 10.38, 27.26),
+(19, 'KDMN0000041 THEN KDMN0000010', 'Mr Burger THEN Vanilla Latte Ice', 'L2', 2.83, 10.38, 27.26),
+(20, 'KDMN0000010 THEN KDMN0000041', 'Vanilla Latte Ice THEN Mr Burger', 'L2', 2.83, 10.38, 27.26),
+(21, 'KDMN0000051 THEN KDMN0000009', 'Mpek Mpek THEN Vanilla Latte Hot', 'L2', 2.83, 8.49, 33.33),
+(22, 'KDMN0000009 THEN KDMN0000051', 'Vanilla Latte Hot THEN Mpek Mpek', 'L2', 2.83, 4.72, 59.96),
+(23, 'KDMN0000051 THEN KDMN0000014', 'Mpek Mpek THEN Red Velvet', 'L2', 1.89, 8.49, 22.26),
+(24, 'KDMN0000014 THEN KDMN0000051', 'Red Velvet THEN Mpek Mpek', 'L2', 1.89, 16.04, 11.78),
+(25, 'KDMN0000017 THEN KDMN0000043', 'Milky Jelly THEN Tahu Gila', 'L2', 1.89, 4.72, 40.04),
+(26, 'KDMN0000043 THEN KDMN0000017', 'Tahu Gila THEN Milky Jelly', 'L2', 1.89, 4.72, 40.04),
+(27, 'KDMN0000008 THEN KDMN0000015', 'Kopi Rinna Ice THEN Matcha', 'L2', 1.89, 7.55, 25.03),
+(28, 'KDMN0000015 THEN KDMN0000008', 'Matcha THEN Kopi Rinna Ice', 'L2', 1.89, 5.66, 33.39),
+(29, 'KDMN0000011 THEN KDMN0000016', 'Hazelnut Latte THEN Trisula', 'L2', 1.89, 3.77, 50.13),
+(30, 'KDMN0000016 THEN KDMN0000011', 'Trisula THEN Hazelnut Latte', 'L2', 1.89, 6.6, 28.64),
+(31, 'KDMN0000044 THEN KDMN0000045', 'Churos THEN Nugget', 'L2', 1.89, 3.77, 50.13),
+(32, 'KDMN0000045 THEN KDMN0000044', 'Nugget THEN Churos', 'L2', 1.89, 2.83, 66.78),
+(33, 'KDMN0000003 THEN KDMN0000012', 'Bon Bon THEN Fanny', 'L2', 1.89, 10.38, 18.21),
+(34, 'KDMN0000012 THEN KDMN0000003', 'Fanny THEN Bon Bon', 'L2', 1.89, 8.49, 22.26),
+(35, 'KDMN0000003 THEN KDMN0000001', 'Bon Bon THEN Espresso', 'L2', 1.89, 10.38, 18.21),
+(36, 'KDMN0000001 THEN KDMN0000003', 'Espresso THEN Bon Bon', 'L2', 1.89, 8.49, 22.26),
+(37, 'KDMN0000013 THEN KDMN0000051', 'Avocado Latte THEN Mpek Mpek', 'L2', 1.89, 7.55, 25.03),
+(38, 'KDMN0000051 THEN KDMN0000013', 'Mpek Mpek THEN Avocado Latte', 'L2', 1.89, 8.49, 22.26),
+(39, 'KDMN0000040 THEN KDMN0000045', 'Air Mineral THEN Nugget', 'L2', 1.89, 13.21, 14.31),
+(40, 'KDMN0000045 THEN KDMN0000040', 'Nugget THEN Air Mineral', 'L2', 1.89, 2.83, 66.78),
+(41, 'KDMN0000040 THEN KDMN0000051', 'Air Mineral THEN Mpek Mpek', 'L2', 1.89, 13.21, 14.31),
+(42, 'KDMN0000051 THEN KDMN0000040', 'Mpek Mpek THEN Air Mineral', 'L2', 1.89, 8.49, 22.26),
+(43, 'KDMN0000014 THEN KDMN0000010', 'Red Velvet THEN Vanilla Latte Ice', 'L2', 1.89, 16.04, 11.78),
+(44, 'KDMN0000010 THEN KDMN0000014', 'Vanilla Latte Ice THEN Red Velvet', 'L2', 1.89, 10.38, 18.21),
+(45, 'KDMN0000040, KDMN0000041 THEN KDMN0000014', 'Air Mineral, Mr Burger THEN Red Velvet', 'L3', 4.72, 7.55, 62.52),
+(46, 'KDMN0000014, KDMN0000040 THEN KDMN0000041', 'Red Velvet, Air Mineral THEN Mr Burger', 'L3', 4.72, 7.55, 62.52),
+(47, 'KDMN0000041, KDMN0000014 THEN KDMN0000040', 'Mr Burger, Red Velvet THEN Air Mineral', 'L3', 4.72, 6.6, 71.52),
+(48, 'KDMN0000040, KDMN0000041 THEN KDMN0000010', 'Air Mineral, Mr Burger THEN Vanilla Latte Ice', 'L3', 2.83, 7.55, 37.48),
+(49, 'KDMN0000010, KDMN0000040 THEN KDMN0000041', 'Vanilla Latte Ice, Air Mineral THEN Mr Burger', 'L3', 2.83, 2.83, 100),
+(50, 'KDMN0000041, KDMN0000010 THEN KDMN0000040', 'Mr Burger, Vanilla Latte Ice THEN Air Mineral', 'L3', 2.83, 2.83, 100),
+(51, 'KDMN0000007, KDMN0000008 THEN KDMN0000010', 'Kopi Rinna Hot, Kopi Rinna Ice THEN Vanilla Latte Ice', 'L3', 2.83, 4.72, 59.96),
+(52, 'KDMN0000010, KDMN0000007 THEN KDMN0000008', 'Vanilla Latte Ice, Kopi Rinna Hot THEN Kopi Rinna Ice', 'L3', 2.83, 3.77, 75.07),
+(53, 'KDMN0000008, KDMN0000010 THEN KDMN0000007', 'Kopi Rinna Ice, Vanilla Latte Ice THEN Kopi Rinna Hot', 'L3', 2.83, 2.83, 100);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_eliminasi`
+--
+
+CREATE TABLE `tb_eliminasi` (
+  `id` int(11) NOT NULL,
+  `itemset` varchar(250) NOT NULL,
+  `item` varchar(200) NOT NULL,
+  `supcount` int(11) NOT NULL,
+  `support` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_eliminasi`
+--
+
+INSERT INTO `tb_eliminasi` (`id`, `itemset`, `item`, `supcount`, `support`) VALUES
+(1, 'KDMN0000027', 'Blueberry Sparkling', 1, 0.94),
+(2, 'KDMN0000039', 'Caffe Latte Hot', 1, 0.94),
+(3, 'KDMN0000037', 'Caramel Machiatto Hot', 1, 0.94),
+(4, 'KDMN0000019', 'Green Tea', 1, 0.94),
+(5, 'KDMN0000047', 'Kentang Nugget', 1, 0.94),
+(6, 'KDMN0000046', 'Kentang Sosis', 1, 0.94),
+(7, 'KDMN0000033', 'Lychee', 1, 0.94),
+(8, 'KDMN0000026', 'Mangga Sparkling', 1, 0.94),
+(9, 'KDMN0000023', 'Milk Tea Coklat', 1, 0.94),
+(10, 'KDMN0000021', 'Thai Tea Coklat', 1, 0.94),
+(11, 'KDMN0000022', 'Thai Tea Milo', 1, 0.94),
+(12, 'KDMN0000020', 'Thai Tea Original', 1, 0.94),
+(13, 'KDMN0000029', 'Viola', 1, 0.94);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_execute`
+--
+
+CREATE TABLE `tb_execute` (
+  `id` int(11) NOT NULL,
+  `lama` float NOT NULL,
+  `record` int(12) NOT NULL,
+  `support` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_execute`
+--
+
+INSERT INTO `tb_execute` (`id`, `lama`, `record`, `support`) VALUES
+(45, 0.5, 9, 4),
+(46, 0.67, 14, 4),
+(47, 0.3, 27, 4),
+(48, 0.45, 27, 10),
+(49, 0.47, 27, 4),
+(50, 0.41, 30, 4),
+(51, 0.53, 35, 4),
+(52, 0.31, 35, 4),
+(53, 0.39, 35, 4),
+(54, 0.38, 35, 10),
+(55, 0.43, 38, 10),
+(56, 0.38, 42, 30),
+(57, 0.36, 42, 30),
+(58, 0.39, 42, 10),
+(59, 0.38, 43, 10),
+(60, 0.36, 37, 10),
+(61, 0.37, 51, 10),
+(62, 0.32, 51, 20),
+(63, 0.61, 51, 4),
+(64, 0.62, 51, 10),
+(65, 0.69, 51, 4),
+(66, 0.64, 70, 10),
+(67, 1.1, 70, 4),
+(68, 0.97, 80, 4),
+(69, 0.89, 83, 4),
+(70, 7.77, 86, 1),
+(71, 7.52, 87, 1),
+(72, 8.09, 88, 1),
+(73, 1.72, 101, 1),
+(74, 1.32, 106, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_jenis`
+--
+
+CREATE TABLE `tb_jenis` (
+  `kd_jenis` char(3) NOT NULL,
+  `jenis` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_jenis`
+--
+
+INSERT INTO `tb_jenis` (`kd_jenis`, `jenis`) VALUES
+('J01', 'minuman'),
+('J02', 'makanan');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_kategori`
+--
+
+CREATE TABLE `tb_kategori` (
+  `kd_kategori` char(3) NOT NULL,
+  `kategori` varchar(30) NOT NULL,
+  `kd_jenis` char(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_kategori`
+--
+
+INSERT INTO `tb_kategori` (`kd_kategori`, `kategori`, `kd_jenis`) VALUES
+('K01', 'Coffee', 'J01'),
+('K02', 'Milkshake', 'J01'),
+('K03', 'Juice', 'J01'),
+('K04', 'Main Course', 'J02'),
+('K05', 'Dessert', 'J02'),
+('K06', 'Snack', 'J02');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_kombinasi`
+--
+
+CREATE TABLE `tb_kombinasi` (
+  `id` int(11) NOT NULL,
+  `itemset` varchar(250) NOT NULL,
+  `item` varchar(250) NOT NULL,
+  `level` varchar(12) NOT NULL,
+  `supcount` int(11) NOT NULL,
+  `support` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_kombinasi`
+--
+
+INSERT INTO `tb_kombinasi` (`id`, `itemset`, `item`, `level`, `supcount`, `support`) VALUES
+(1, 'KDMN0000002', 'Affugatto', 'L1', 9, 8.49),
+(2, 'KDMN0000040', 'Air Mineral', 'L1', 14, 13.21),
+(3, 'KDMN0000004', 'Americano', 'L1', 9, 8.49),
+(4, 'KDMN0000013', 'Avocado Latte', 'L1', 8, 7.55),
+(5, 'KDMN0000003', 'Bon Bon', 'L1', 11, 10.38),
+(6, 'KDMN0000038', 'Caffe Latte Ice', 'L1', 2, 1.89),
+(7, 'KDMN0000036', 'Caramel Machiatto Ice', 'L1', 3, 2.83),
+(8, 'KDMN0000044', 'Churos', 'L1', 4, 3.77),
+(9, 'KDMN0000001', 'Espresso', 'L1', 9, 8.49),
+(10, 'KDMN0000012', 'Fanny', 'L1', 9, 8.49),
+(11, 'KDMN0000032', 'Green Lime', 'L1', 2, 1.89),
+(12, 'KDMN0000048', 'Grill Paket A', 'L1', 3, 2.83),
+(13, 'KDMN0000049', 'Grill Paket B', 'L1', 2, 1.89),
+(14, 'KDMN0000011', 'Hazelnut Latte', 'L1', 4, 3.77),
+(15, 'KDMN0000053', 'Ice Cream', 'L1', 2, 1.89),
+(16, 'KDMN0000042', 'Kentang Goreng', 'L1', 2, 1.89),
+(17, 'KDMN0000025', 'Kiwi Sparkling', 'L1', 3, 2.83),
+(18, 'KDMN0000055', 'Klapertart', 'L1', 4, 3.77),
+(19, 'KDMN0000005', 'Kopi Macca Hot', 'L1', 8, 7.55),
+(20, 'KDMN0000006', 'Kopi Macca Ice', 'L1', 4, 3.77),
+(21, 'KDMN0000007', 'Kopi Rinna Hot', 'L1', 11, 10.38),
+(22, 'KDMN0000008', 'Kopi Rinna Ice', 'L1', 8, 7.55),
+(23, 'KDMN0000035', 'Kopi Tukir', 'L1', 2, 1.89),
+(24, 'KDMN0000018', 'Lemon Tea', 'L1', 2, 1.89),
+(25, 'KDMN0000015', 'Matcha', 'L1', 6, 5.66),
+(26, 'KDMN0000050', 'Mie Goreng', 'L1', 3, 2.83),
+(27, 'KDMN0000024', 'Milk Tea Milo', 'L1', 2, 1.89),
+(28, 'KDMN0000017', 'Milky Jelly', 'L1', 5, 4.72),
+(29, 'KDMN0000051', 'Mpek Mpek', 'L1', 9, 8.49),
+(30, 'KDMN0000041', 'Mr Burger', 'L1', 11, 10.38),
+(31, 'KDMN0000052', 'Nasi Kuning', 'L1', 2, 1.89),
+(32, 'KDMN0000045', 'Nugget', 'L1', 3, 2.83),
+(33, 'KDMN0000054', 'Pancake', 'L1', 3, 2.83),
+(34, 'KDMN0000028', 'Raspberry', 'L1', 2, 1.89),
+(35, 'KDMN0000014', 'Red Velvet', 'L1', 17, 16.04),
+(36, 'KDMN0000031', 'Royal Coklat', 'L1', 2, 1.89),
+(37, 'KDMN0000030', 'Stella', 'L1', 5, 4.72),
+(38, 'KDMN0000043', 'Tahu Gila', 'L1', 5, 4.72),
+(39, 'KDMN0000016', 'Trisula', 'L1', 7, 6.6),
+(40, 'KDMN0000034', 'V60', 'L1', 2, 1.89),
+(41, 'KDMN0000009', 'Vanilla Latte Hot', 'L1', 5, 4.72),
+(42, 'KDMN0000010', 'Vanilla Latte Ice', 'L1', 11, 10.38),
+(43, 'KDMN0000002, KDMN0000001', 'Affugatto, Espresso', 'L2', 6, 5.66),
+(44, 'KDMN0000040, KDMN0000051', 'Air Mineral, Mpek Mpek', 'L2', 2, 1.89),
+(45, 'KDMN0000040, KDMN0000041', 'Air Mineral, Mr Burger', 'L2', 8, 7.55),
+(46, 'KDMN0000040, KDMN0000045', 'Air Mineral, Nugget', 'L2', 2, 1.89),
+(47, 'KDMN0000040, KDMN0000014', 'Air Mineral, Red Velvet', 'L2', 8, 7.55),
+(48, 'KDMN0000040, KDMN0000010', 'Air Mineral, Vanilla Latte Ice', 'L2', 3, 2.83),
+(49, 'KDMN0000004, KDMN0000003', 'Americano, Bon Bon', 'L2', 7, 6.6),
+(50, 'KDMN0000013, KDMN0000051', 'Avocado Latte, Mpek Mpek', 'L2', 2, 1.89),
+(51, 'KDMN0000003, KDMN0000001', 'Bon Bon, Espresso', 'L2', 2, 1.89),
+(52, 'KDMN0000003, KDMN0000012', 'Bon Bon, Fanny', 'L2', 2, 1.89),
+(53, 'KDMN0000044, KDMN0000045', 'Churos, Nugget', 'L2', 2, 1.89),
+(54, 'KDMN0000011, KDMN0000016', 'Hazelnut Latte, Trisula', 'L2', 2, 1.89),
+(55, 'KDMN0000007, KDMN0000008', 'Kopi Rinna Hot, Kopi Rinna Ice', 'L2', 5, 4.72),
+(56, 'KDMN0000007, KDMN0000010', 'Kopi Rinna Hot, Vanilla Latte Ice', 'L2', 4, 3.77),
+(57, 'KDMN0000008, KDMN0000015', 'Kopi Rinna Ice, Matcha', 'L2', 2, 1.89),
+(58, 'KDMN0000008, KDMN0000010', 'Kopi Rinna Ice, Vanilla Latte Ice', 'L2', 3, 2.83),
+(59, 'KDMN0000017, KDMN0000043', 'Milky Jelly, Tahu Gila', 'L2', 2, 1.89),
+(60, 'KDMN0000051, KDMN0000014', 'Mpek Mpek, Red Velvet', 'L2', 2, 1.89),
+(61, 'KDMN0000051, KDMN0000009', 'Mpek Mpek, Vanilla Latte Hot', 'L2', 3, 2.83),
+(62, 'KDMN0000041, KDMN0000014', 'Mr Burger, Red Velvet', 'L2', 7, 6.6),
+(63, 'KDMN0000041, KDMN0000010', 'Mr Burger, Vanilla Latte Ice', 'L2', 3, 2.83),
+(64, 'KDMN0000014, KDMN0000010', 'Red Velvet, Vanilla Latte Ice', 'L2', 2, 1.89),
+(65, 'KDMN0000040, KDMN0000041, KDMN0000014', 'Air Mineral, Mr Burger, Red Velvet', 'L3', 5, 4.72),
+(66, 'KDMN0000040, KDMN0000041, KDMN0000010', 'Air Mineral, Mr Burger, Vanilla Latte Ice', 'L3', 3, 2.83),
+(67, 'KDMN0000007, KDMN0000008, KDMN0000010', 'Kopi Rinna Hot, Kopi Rinna Ice, Vanilla Latte Ice', 'L3', 3, 2.83);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_menu`
+--
+
+CREATE TABLE `tb_menu` (
+  `kd_menu` char(11) NOT NULL,
+  `menu` varchar(50) NOT NULL,
+  `harga` int(10) NOT NULL,
+  `sejak` date NOT NULL,
+  `kd_kategori` char(3) NOT NULL,
+  `gambar` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_menu`
+--
+
+INSERT INTO `tb_menu` (`kd_menu`, `menu`, `harga`, `sejak`, `kd_kategori`, `gambar`) VALUES
+('KDMN0000001', 'Espresso', 8000, '2024-09-01', 'K01', 'menu-1727620811.jpg'),
+('KDMN0000002', 'Affugatto', 10000, '2024-09-01', 'K05', 'menu-1727620869.jpg'),
+('KDMN0000003', 'Bon Bon', 10000, '2024-09-05', 'K06', 'menu-1727620901.jpg'),
+('KDMN0000004', 'Americano', 10000, '2024-09-01', 'K01', 'menu-1727620928.jpg'),
+('KDMN0000005', 'Kopi Macca Hot', 15000, '2024-09-05', 'K01', 'menu-1727620961.jpg'),
+('KDMN0000006', 'Kopi Macca Ice', 15000, '2024-09-01', 'K01', 'menu-1727620981.jpg'),
+('KDMN0000007', 'Kopi Rinna Hot', 15000, '2024-09-18', 'K01', 'menu-1727621019.jpg'),
+('KDMN0000008', 'Kopi Rinna Ice', 15000, '2024-09-02', 'K01', 'menu-1727621042.jpg'),
+('KDMN0000009', 'Vanilla Latte Hot', 18000, '2024-09-02', 'K02', 'menu-1727621081.jpg'),
+('KDMN0000010', 'Vanilla Latte Ice', 18000, '2024-09-17', 'K02', 'menu-1727621103.jpg'),
+('KDMN0000011', 'Hazelnut Latte', 18000, '2024-09-02', 'K02', 'menu-1727621132.jpg'),
+('KDMN0000012', 'Fanny', 20000, '2024-09-02', 'K02', 'menu-1727621164.jpg'),
+('KDMN0000013', 'Avocado Latte', 18000, '2024-09-02', 'K03', 'menu-1727621194.jpg'),
+('KDMN0000014', 'Red Velvet', 18000, '2024-09-04', 'K02', 'menu-1727621224.jpg'),
+('KDMN0000015', 'Matcha', 18000, '2024-09-02', 'K02', 'menu-1727621250.jpg'),
+('KDMN0000016', 'Trisula', 40000, '2024-09-03', 'K03', ''),
+('KDMN0000017', 'Milky Jelly', 20000, '2024-09-09', 'K02', ''),
+('KDMN0000018', 'Lemon Tea', 15000, '2024-09-02', 'K03', ''),
+('KDMN0000019', 'Green Tea', 15000, '2024-09-10', 'K03', ''),
+('KDMN0000020', 'Thai Tea Original', 15000, '2024-09-03', 'K02', ''),
+('KDMN0000021', 'Thai Tea Coklat', 15000, '2024-09-18', 'K02', ''),
+('KDMN0000022', 'Thai Tea Milo', 15000, '2024-09-18', 'K02', ''),
+('KDMN0000023', 'Milk Tea Coklat', 15000, '2024-09-25', 'K02', ''),
+('KDMN0000024', 'Milk Tea Milo', 15000, '2024-09-02', 'K02', ''),
+('KDMN0000025', 'Kiwi Sparkling', 18000, '2024-09-09', 'K03', ''),
+('KDMN0000026', 'Mangga Sparkling', 18000, '2024-09-10', 'K03', ''),
+('KDMN0000027', 'Blueberry Sparkling', 18000, '2024-09-02', 'K03', ''),
+('KDMN0000028', 'Raspberry', 18000, '2024-09-02', 'K03', ''),
+('KDMN0000029', 'Viola', 20000, '2024-09-17', 'K03', ''),
+('KDMN0000030', 'Stella', 20000, '2024-09-03', 'K03', ''),
+('KDMN0000031', 'Royal Coklat', 18000, '2024-09-03', 'K02', ''),
+('KDMN0000032', 'Green Lime', 23000, '2024-09-17', 'K03', ''),
+('KDMN0000033', 'Lychee', 18000, '2024-09-10', 'K03', ''),
+('KDMN0000034', 'V60', 20000, '2024-09-02', 'K01', ''),
+('KDMN0000035', 'Kopi Tukir', 13000, '2024-09-02', 'K01', ''),
+('KDMN0000036', 'Caramel Machiatto Ice', 23000, '2024-09-12', 'K02', ''),
+('KDMN0000037', 'Caramel Machiatto Hot', 23000, '2024-09-11', 'K02', ''),
+('KDMN0000038', 'Caffe Latte Ice', 18000, '2024-09-04', 'K01', ''),
+('KDMN0000039', 'Caffe Latte Hot', 18000, '2024-09-05', 'K01', ''),
+('KDMN0000040', 'Air Mineral', 5000, '2024-09-02', 'K02', 'menu-1727621882.jpg'),
+('KDMN0000041', 'Mr Burger', 30000, '2024-09-01', 'K06', ''),
+('KDMN0000042', 'Kentang Goreng', 15000, '2024-09-02', 'K06', 'menu-1727621947.jpg'),
+('KDMN0000043', 'Tahu Gila', 15000, '2024-09-02', 'K06', 'menu-1727621981.jpg'),
+('KDMN0000044', 'Churos', 15000, '2024-09-02', 'K06', ''),
+('KDMN0000045', 'Nugget', 15000, '2024-09-02', 'K06', ''),
+('KDMN0000046', 'Kentang Sosis', 25000, '2024-09-02', 'K06', ''),
+('KDMN0000047', 'Kentang Nugget', 25000, '2024-09-16', 'K06', ''),
+('KDMN0000048', 'Grill Paket A', 125000, '2024-09-01', 'K04', ''),
+('KDMN0000049', 'Grill Paket B', 200000, '2024-09-02', 'K04', ''),
+('KDMN0000050', 'Mie Goreng', 18000, '2024-09-09', 'K04', ''),
+('KDMN0000051', 'Mpek Mpek', 20000, '2024-09-02', 'K06', ''),
+('KDMN0000052', 'Nasi Kuning', 15000, '2024-09-05', 'K04', ''),
+('KDMN0000053', 'Ice Cream', 5000, '2024-09-03', 'K05', 'menu-1727622180.jpg'),
+('KDMN0000054', 'Pancake', 15000, '2024-09-18', 'K05', ''),
+('KDMN0000055', 'Klapertart', 15000, '2024-09-04', 'K05', '');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_pegawai`
+--
+
+CREATE TABLE `tb_pegawai` (
+  `kd_pegawai` char(11) NOT NULL,
+  `nama` varchar(35) NOT NULL,
+  `tgl_lahir` date NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `alamat` text NOT NULL,
+  `telp` varchar(15) NOT NULL,
+  `email` varchar(35) NOT NULL,
+  `kd_posisi` char(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_pegawai`
+--
+
+INSERT INTO `tb_pegawai` (`kd_pegawai`, `nama`, `tgl_lahir`, `gender`, `alamat`, `telp`, `email`, `kd_posisi`) VALUES
+('PGPS0000001', 'Ravy Makassar', '1996-03-22', 'Laki-laki', 'Palopo', '089643343761', 'ravy@gmail.com', 'P01'),
+('PGPS0000002', 'John Doe', '1980-10-14', 'Laki-laki', 'Negara Utopis', '08983329112', 'Johndoe@gmail.com', 'P02');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_posisi`
+--
+
+CREATE TABLE `tb_posisi` (
+  `kd_posisi` char(3) NOT NULL,
+  `posisi` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_posisi`
+--
+
+INSERT INTO `tb_posisi` (`kd_posisi`, `posisi`) VALUES
+('P01', 'manajer'),
+('P02', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_praproses`
+--
+
+CREATE TABLE `tb_praproses` (
+  `nonota` char(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `itemset` text NOT NULL,
+  `item` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `tb_praproses`
+--
+
+INSERT INTO `tb_praproses` (`nonota`, `tanggal`, `itemset`, `item`) VALUES
+('NOTA0000001', '2024-09-29', 'KDMN0000002, ', 'Affugatto, '),
+('NOTA0000002', '2024-09-29', 'KDMN0000043, KDMN0000014, ', 'Tahu Gila, Red Velvet, '),
+('NOTA0000003', '2024-09-29', 'KDMN0000011, KDMN0000012, ', 'Hazelnut Latte, Fanny, '),
+('NOTA0000004', '2024-09-29', 'KDMN0000005, KDMN0000044, ', 'Kopi Macca Hot, Churos, '),
+('NOTA0000005', '2024-09-29', 'KDMN0000001, KDMN0000004, ', 'Espresso, Americano, '),
+('NOTA0000006', '2024-09-29', 'KDMN0000048, KDMN0000050, ', 'Grill Paket A, Mie Goreng, '),
+('NOTA0000007', '2024-09-29', 'KDMN0000005, KDMN0000008, ', 'Kopi Macca Hot, Kopi Rinna Ice, '),
+('NOTA0000008', '2024-09-29', 'KDMN0000013, KDMN0000014, ', 'Avocado Latte, Red Velvet, '),
+('NOTA0000009', '2024-09-29', 'KDMN0000016, ', 'Trisula, '),
+('NOTA0000010', '2024-09-29', 'KDMN0000010, KDMN0000013, KDMN0000007, ', 'Vanilla Latte Ice, Avocado Latte, Kopi Rinna Hot, '),
+('NOTA0000011', '2024-09-29', 'KDMN0000005, KDMN0000006, ', 'Kopi Macca Hot, Kopi Macca Ice, '),
+('NOTA0000012', '2024-09-29', 'KDMN0000015, KDMN0000013, ', 'Matcha, Avocado Latte, '),
+('NOTA0000013', '2024-09-29', 'KDMN0000007, KDMN0000007, ', 'Kopi Rinna Hot, Kopi Rinna Hot, '),
+('NOTA0000014', '2024-09-29', 'KDMN0000014, KDMN0000055, ', 'Red Velvet, Klapertart, '),
+('NOTA0000015', '2024-09-30', 'KDMN0000008, KDMN0000015, ', 'Kopi Rinna Ice, Matcha, '),
+('NOTA0000016', '2024-09-30', 'KDMN0000007, KDMN0000008, ', 'Kopi Rinna Hot, Kopi Rinna Ice, '),
+('NOTA0000017', '2024-09-30', 'KDMN0000012, KDMN0000048, ', 'Fanny, Grill Paket A, '),
+('NOTA0000018', '2024-09-30', 'KDMN0000007, ', 'Kopi Rinna Hot, '),
+('NOTA0000019', '2024-09-30', 'KDMN0000007, KDMN0000025, ', 'Kopi Rinna Hot, Kiwi Sparkling, '),
+('NOTA0000020', '2024-09-30', 'KDMN0000018, KDMN0000032, ', 'Lemon Tea, Green Lime, '),
+('NOTA0000021', '2024-09-30', 'KDMN0000001, KDMN0000002, ', 'Espresso, Affugatto, '),
+('NOTA0000022', '2024-09-30', 'KDMN0000002, KDMN0000007, ', 'Affugatto, Kopi Rinna Hot, '),
+('NOTA0000023', '2024-09-30', 'KDMN0000007, KDMN0000008, ', 'Kopi Rinna Hot, Kopi Rinna Ice, '),
+('NOTA0000024', '2024-09-30', 'KDMN0000006, ', 'Kopi Macca Ice, '),
+('NOTA0000025', '2024-09-30', 'KDMN0000010, KDMN0000011, ', 'Vanilla Latte Ice, Hazelnut Latte, '),
+('NOTA0000026', '2024-09-30', 'KDMN0000006, ', 'Kopi Macca Ice, '),
+('NOTA0000027', '2024-09-30', 'KDMN0000003, ', 'Bon Bon, '),
+('NOTA0000028', '2024-09-30', 'KDMN0000001, KDMN0000002, ', 'Espresso, Affugatto, '),
+('NOTA0000029', '2024-09-30', 'KDMN0000002, KDMN0000001, ', 'Affugatto, Espresso, '),
+('NOTA0000030', '2024-09-30', 'KDMN0000002, KDMN0000001, ', 'Affugatto, Espresso, '),
+('NOTA0000031', '2024-09-30', 'KDMN0000009, KDMN0000008, ', 'Vanilla Latte Hot, Kopi Rinna Ice, '),
+('NOTA0000032', '2024-09-30', 'KDMN0000047, KDMN0000039, ', 'Kentang Nugget, Caffe Latte Hot, '),
+('NOTA0000033', '2024-09-30', 'KDMN0000014, KDMN0000010, ', 'Red Velvet, Vanilla Latte Ice, '),
+('NOTA0000034', '2024-09-30', 'KDMN0000015, KDMN0000014, ', 'Matcha, Red Velvet, '),
+('NOTA0000035', '2024-09-30', 'KDMN0000038, KDMN0000052, ', 'Caffe Latte Ice, Nasi Kuning, '),
+('NOTA0000036', '2024-09-30', 'KDMN0000005, KDMN0000012, ', 'Kopi Macca Hot, Fanny, '),
+('NOTA0000037', '2024-09-30', 'KDMN0000002, KDMN0000001, ', 'Affugatto, Espresso, '),
+('NOTA0000038', '2024-09-30', 'KDMN0000003, KDMN0000004, KDMN0000014, ', 'Bon Bon, Americano, Red Velvet, '),
+('NOTA0000039', '2024-09-30', 'KDMN0000003, KDMN0000004, ', 'Bon Bon, Americano, '),
+('NOTA0000040', '2024-09-30', 'KDMN0000002, KDMN0000004, KDMN0000005, ', 'Affugatto, Americano, Kopi Macca Hot, '),
+('NOTA0000041', '2024-09-30', 'KDMN0000003, KDMN0000004, ', 'Bon Bon, Americano, '),
+('NOTA0000042', '2024-09-30', 'KDMN0000003, KDMN0000004, ', 'Bon Bon, Americano, '),
+('NOTA0000043', '2024-09-30', 'KDMN0000003, KDMN0000004, ', 'Bon Bon, Americano, '),
+('NOTA0000044', '2024-09-30', 'KDMN0000004, KDMN0000003, ', 'Americano, Bon Bon, '),
+('NOTA0000045', '2024-09-30', 'KDMN0000003, KDMN0000004, KDMN0000012, ', 'Bon Bon, Americano, Fanny, '),
+('NOTA0000046', '2024-09-30', 'KDMN0000016, KDMN0000011, ', 'Trisula, Hazelnut Latte, '),
+('NOTA0000047', '2024-09-30', 'KDMN0000030, KDMN0000042, ', 'Stella, Kentang Goreng, '),
+('NOTA0000048', '2024-09-30', 'KDMN0000043, KDMN0000054, KDMN0000041, KDMN0000054, KDMN0000005, ', 'Tahu Gila, Pancake, Mr Burger, Pancake, Kopi Macca Hot, '),
+('NOTA0000049', '2024-09-30', 'KDMN0000007, KDMN0000008, KDMN0000010, ', 'Kopi Rinna Hot, Kopi Rinna Ice, Vanilla Latte Ice, '),
+('NOTA0000050', '2024-09-30', 'KDMN0000007, KDMN0000008, KDMN0000010, KDMN0000015, ', 'Kopi Rinna Hot, Kopi Rinna Ice, Vanilla Latte Ice, Matcha, '),
+('NOTA0000051', '2024-09-30', 'KDMN0000010, KDMN0000008, KDMN0000007, ', 'Vanilla Latte Ice, Kopi Rinna Ice, Kopi Rinna Hot, '),
+('NOTA0000052', '2024-10-01', 'KDMN0000001, KDMN0000003, ', 'Espresso, Bon Bon, '),
+('NOTA0000053', '2024-10-01', 'KDMN0000012, KDMN0000013, KDMN0000051, ', 'Fanny, Avocado Latte, Mpek Mpek, '),
+('NOTA0000054', '2024-10-01', 'KDMN0000045, KDMN0000040, KDMN0000009, ', 'Nugget, Air Mineral, Vanilla Latte Hot, '),
+('NOTA0000055', '2024-10-08', 'KDMN0000041, KDMN0000040, KDMN0000014, ', 'Mr Burger, Air Mineral, Red Velvet, '),
+('NOTA0000056', '2024-10-08', 'KDMN0000010, KDMN0000041, KDMN0000040, ', 'Vanilla Latte Ice, Mr Burger, Air Mineral, '),
+('NOTA0000057', '2024-10-08', 'KDMN0000014, KDMN0000041, KDMN0000040, ', 'Red Velvet, Mr Burger, Air Mineral, '),
+('NOTA0000058', '2024-10-08', 'KDMN0000014, KDMN0000040, ', 'Red Velvet, Air Mineral, '),
+('NOTA0000059', '2024-10-08', 'KDMN0000041, KDMN0000040, KDMN0000014, ', 'Mr Burger, Air Mineral, Red Velvet, '),
+('NOTA0000060', '2024-10-08', 'KDMN0000041, KDMN0000040, KDMN0000022, ', 'Mr Burger, Air Mineral, Thai Tea Milo, '),
+('NOTA0000061', '2024-10-08', 'KDMN0000014, KDMN0000021, KDMN0000041, ', 'Red Velvet, Thai Tea Coklat, Mr Burger, '),
+('NOTA0000062', '2024-10-08', 'KDMN0000052, KDMN0000041, KDMN0000040, KDMN0000014, ', 'Nasi Kuning, Mr Burger, Air Mineral, Red Velvet, '),
+('NOTA0000063', '2024-10-08', 'KDMN0000010, KDMN0000041, KDMN0000040, KDMN0000014, ', 'Vanilla Latte Ice, Mr Burger, Air Mineral, Red Velvet, '),
+('NOTA0000064', '2024-10-08', 'KDMN0000010, KDMN0000041, KDMN0000040, ', 'Vanilla Latte Ice, Mr Burger, Air Mineral, '),
+('NOTA0000065', '2024-10-08', 'KDMN0000009, KDMN0000051, ', 'Vanilla Latte Hot, Mpek Mpek, '),
+('NOTA0000066', '2024-10-08', 'KDMN0000051, KDMN0000010, ', 'Mpek Mpek, Vanilla Latte Ice, '),
+('NOTA0000067', '2024-10-08', 'KDMN0000051, KDMN0000009, ', 'Mpek Mpek, Vanilla Latte Hot, '),
+('NOTA0000068', '2024-10-08', 'KDMN0000014, KDMN0000040, ', 'Red Velvet, Air Mineral, '),
+('NOTA0000069', '2024-10-08', 'KDMN0000041, KDMN0000051, KDMN0000014, KDMN0000009, ', 'Mr Burger, Mpek Mpek, Red Velvet, Vanilla Latte Hot, '),
+('NOTA0000070', '2024-10-08', 'KDMN0000014, KDMN0000040, KDMN0000051, ', 'Red Velvet, Air Mineral, Mpek Mpek, '),
+('NOTA0000071', '2024-10-08', 'KDMN0000016, KDMN0000044, KDMN0000045, ', 'Trisula, Churos, Nugget, '),
+('NOTA0000072', '2024-10-08', 'KDMN0000017, KDMN0000020, KDMN0000046, ', 'Milky Jelly, Thai Tea Original, Kentang Sosis, '),
+('NOTA0000073', '2024-10-08', 'KDMN0000044, KDMN0000038, KDMN0000050, ', 'Churos, Caffe Latte Ice, Mie Goreng, '),
+('NOTA0000074', '2024-10-08', 'KDMN0000044, KDMN0000045, KDMN0000040, KDMN0000015, ', 'Churos, Nugget, Air Mineral, Matcha, '),
+('NOTA0000075', '2024-10-08', 'KDMN0000053, KDMN0000040, KDMN0000051, ', 'Ice Cream, Air Mineral, Mpek Mpek, '),
+('NOTA0000076', '2024-10-08', 'KDMN0000049, KDMN0000042, ', 'Grill Paket B, Kentang Goreng, '),
+('NOTA0000077', '2024-10-08', 'KDMN0000011, KDMN0000011, KDMN0000016, ', 'Hazelnut Latte, Hazelnut Latte, Trisula, '),
+('NOTA0000078', '2024-10-08', 'KDMN0000023, KDMN0000024, KDMN0000025, KDMN0000051, ', 'Milk Tea Coklat, Milk Tea Milo, Kiwi Sparkling, Mpek Mpek, '),
+('NOTA0000079', '2024-10-08', 'KDMN0000043, KDMN0000010, KDMN0000027, ', 'Tahu Gila, Vanilla Latte Ice, Blueberry Sparkling, '),
+('NOTA0000080', '2024-10-08', 'KDMN0000017, KDMN0000016, KDMN0000043, ', 'Milky Jelly, Trisula, Tahu Gila, '),
+('NOTA0000081', '2024-10-08', 'KDMN0000018, KDMN0000019, ', 'Lemon Tea, Green Tea, '),
+('NOTA0000082', '2024-10-08', 'KDMN0000026, KDMN0000025, ', 'Mangga Sparkling, Kiwi Sparkling, '),
+('NOTA0000083', '2024-10-08', 'KDMN0000029, KDMN0000030, ', 'Viola, Stella, '),
+('NOTA0000084', '2024-10-08', 'KDMN0000031, KDMN0000034, ', 'Royal Coklat, V60, '),
+('NOTA0000085', '2024-10-08', 'KDMN0000016, ', 'Trisula, '),
+('NOTA0000086', '2024-10-08', 'KDMN0000033, ', 'Lychee, '),
+('NOTA0000087', '2024-10-08', 'KDMN0000035, ', 'Kopi Tukir, '),
+('NOTA0000088', '2024-10-08', 'KDMN0000035, ', 'Kopi Tukir, '),
+('NOTA0000089', '2024-10-08', 'KDMN0000036, KDMN0000028, KDMN0000055, ', 'Caramel Machiatto Ice, Raspberry, Klapertart, '),
+('NOTA0000090', '2024-10-08', 'KDMN0000005, KDMN0000017, KDMN0000036, ', 'Kopi Macca Hot, Milky Jelly, Caramel Machiatto Ice, '),
+('NOTA0000091', '2024-10-08', 'KDMN0000001, KDMN0000002, KDMN0000016, KDMN0000054, ', 'Espresso, Affugatto, Trisula, Pancake, '),
+('NOTA0000092', '2024-10-08', 'KDMN0000051, KDMN0000030, KDMN0000013, ', 'Mpek Mpek, Stella, Avocado Latte, '),
+('NOTA0000093', '2024-10-08', 'KDMN0000049, KDMN0000032, ', 'Grill Paket B, Green Lime, '),
+('NOTA0000094', '2024-10-08', 'KDMN0000028, KDMN0000024, KDMN0000050, ', 'Raspberry, Milk Tea Milo, Mie Goreng, '),
+('NOTA0000095', '2024-10-08', 'KDMN0000055, KDMN0000012, KDMN0000003, ', 'Klapertart, Fanny, Bon Bon, '),
+('NOTA0000096', '2024-10-08', 'KDMN0000030, KDMN0000037, ', 'Stella, Caramel Machiatto Hot, '),
+('NOTA0000097', '2024-10-08', 'KDMN0000055, KDMN0000054, KDMN0000053, KDMN0000034, KDMN0000030, ', 'Klapertart, Pancake, Ice Cream, V60, Stella, '),
+('NOTA0000098', '2024-10-08', 'KDMN0000048, KDMN0000031, KDMN0000015, ', 'Grill Paket A, Royal Coklat, Matcha, '),
+('NOTA0000099', '2024-10-08', 'KDMN0000001, KDMN0000003, KDMN0000036, ', 'Espresso, Bon Bon, Caramel Machiatto Ice, '),
+('NOTA0000100', '2024-10-08', 'KDMN0000013, KDMN0000043, KDMN0000017, ', 'Avocado Latte, Tahu Gila, Milky Jelly, '),
+('NOTA0000101', '2024-10-10', 'KDMN0000012, ', 'Fanny, '),
+('NOTA0000102', '2024-10-23', 'KDMN0000012, ', 'Fanny, '),
+('NOTA0000103', '2024-10-23', 'KDMN0000017, KDMN0000006, KDMN0000014, KDMN0000014, ', 'Milky Jelly, Kopi Macca Ice, Red Velvet, Red Velvet, '),
+('NOTA0000104', '2024-10-23', 'KDMN0000013, KDMN0000005, ', 'Avocado Latte, Kopi Macca Hot, '),
+('NOTA0000105', '2024-10-23', 'KDMN0000013, ', 'Avocado Latte, '),
+('NOTA0000106', '2024-10-23', 'KDMN0000007, KDMN0000012, ', 'Kopi Rinna Hot, Fanny, ');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `detailpenjualan`
+--
+ALTER TABLE `detailpenjualan`
+  ADD KEY `nonota` (`nonota`),
+  ADD KEY `kd_menu` (`kd_menu`);
+
+--
+-- Indeks untuk tabel `penjualan`
+--
+ALTER TABLE `penjualan`
+  ADD PRIMARY KEY (`nonota`);
+
+--
+-- Indeks untuk tabel `tblsementara`
+--
+ALTER TABLE `tblsementara`
+  ADD KEY `kd_menu` (`kd_menu`);
+
+--
+-- Indeks untuk tabel `tb_akun`
+--
+ALTER TABLE `tb_akun`
+  ADD PRIMARY KEY (`kd_akun`),
+  ADD KEY `kd_pegawai` (`kd_pegawai`);
+
+--
+-- Indeks untuk tabel `tb_assosiasi`
+--
+ALTER TABLE `tb_assosiasi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_eliminasi`
+--
+ALTER TABLE `tb_eliminasi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_execute`
+--
+ALTER TABLE `tb_execute`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_jenis`
+--
+ALTER TABLE `tb_jenis`
+  ADD PRIMARY KEY (`kd_jenis`);
+
+--
+-- Indeks untuk tabel `tb_kategori`
+--
+ALTER TABLE `tb_kategori`
+  ADD PRIMARY KEY (`kd_kategori`),
+  ADD UNIQUE KEY `kategori` (`kategori`),
+  ADD KEY `kd_jenis` (`kd_jenis`);
+
+--
+-- Indeks untuk tabel `tb_kombinasi`
+--
+ALTER TABLE `tb_kombinasi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_menu`
+--
+ALTER TABLE `tb_menu`
+  ADD PRIMARY KEY (`kd_menu`),
+  ADD UNIQUE KEY `menu` (`menu`),
+  ADD UNIQUE KEY `menu_2` (`menu`),
+  ADD KEY `kd_kategori` (`kd_kategori`);
+
+--
+-- Indeks untuk tabel `tb_pegawai`
+--
+ALTER TABLE `tb_pegawai`
+  ADD PRIMARY KEY (`kd_pegawai`),
+  ADD KEY `kd_posisi` (`kd_posisi`),
+  ADD KEY `nama` (`nama`),
+  ADD KEY `nama_2` (`nama`);
+
+--
+-- Indeks untuk tabel `tb_posisi`
+--
+ALTER TABLE `tb_posisi`
+  ADD PRIMARY KEY (`kd_posisi`);
+
+--
+-- Indeks untuk tabel `tb_praproses`
+--
+ALTER TABLE `tb_praproses`
+  ADD PRIMARY KEY (`nonota`),
+  ADD UNIQUE KEY `nonota` (`nonota`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_assosiasi`
+--
+ALTER TABLE `tb_assosiasi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_eliminasi`
+--
+ALTER TABLE `tb_eliminasi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_execute`
+--
+ALTER TABLE `tb_execute`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_kombinasi`
+--
+ALTER TABLE `tb_kombinasi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `tb_kategori`
+--
+ALTER TABLE `tb_kategori`
+  ADD CONSTRAINT `tb_kategori_ibfk_1` FOREIGN KEY (`kd_jenis`) REFERENCES `tb_jenis` (`kd_jenis`);
+
+--
+-- Ketidakleluasaan untuk tabel `tb_menu`
+--
+ALTER TABLE `tb_menu`
+  ADD CONSTRAINT `tb_menu_ibfk_1` FOREIGN KEY (`kd_kategori`) REFERENCES `tb_kategori` (`kd_kategori`);
+
+--
+-- Ketidakleluasaan untuk tabel `tb_pegawai`
+--
+ALTER TABLE `tb_pegawai`
+  ADD CONSTRAINT `tb_pegawai_ibfk_1` FOREIGN KEY (`kd_posisi`) REFERENCES `tb_posisi` (`kd_posisi`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
